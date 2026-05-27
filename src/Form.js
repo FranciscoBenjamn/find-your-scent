@@ -4,6 +4,8 @@ function Form() {
   const [cologne, setCologne] = useState("");
   const [temperature, setTemperature] = useState("summer");
   const [results, setResults] = useState([]);
+  const [submissionBox, setSubmissionBox] = useState(false);
+  const [userInput, setUserInput] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,11 +26,11 @@ function Form() {
   }
 
   return (
-    <>
+    <div className="form">
       <h1>Find your Scent</h1>
       <form className="cologneForm" onSubmit={handleSubmit}>
         <fieldset>
-          <label for="button-1">How we tryin to smell? </label>
+          <label for="button-1">What're we going for? </label>
           <input
             id="button-1"
             type={"text"}
@@ -59,15 +61,36 @@ function Form() {
       </form>
 
       {results.length === 0 ? (
-        "nothing for you yet, we got you next time"
+        <p className="results">
+          "nothing for you yet, we'll get you next time"
+        </p>
       ) : (
         <ul>
           {results.map((result) => (
-            <li>{result}</li>
+            <li className="results">{result}</li>
           ))}
         </ul>
       )}
-    </>
+      <input
+        type={"submit"}
+        className="addscent"
+        value="are we missing scents? 😮‍💨"
+        onClick={() => setSubmissionBox(true)}
+      />
+
+      {submissionBox && (
+        <div>
+          <textarea
+            placeholder="Tell us some of your favorites here :)"
+            rows="2"
+            cols="40"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+          ></textarea>
+          <button onClick={() => setSubmissionBox(false)}>Submit</button>
+        </div>
+      )}
+    </div>
   );
 }
 

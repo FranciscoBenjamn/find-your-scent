@@ -5,9 +5,62 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rebeccapurple;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1, label{
+  color:bisque;
+}
+fieldset{
+  border: none;
+  padding: 1rem 0;
+}
+input[type="submit"] {
+  display: block;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: bisque;
+  border-color: white;
+  min-width: 300px;
+}
+label{
+  font-weight: bold;
+  font-size: 20px;
+}
+.results{
+  color: bisque;
+  font-weight: bold;
+  
+}
+select, input{
+  display: block;
+  margin: 1em auto;
+  height: 2em;
+  background-color: bisque;
+  width: 200px;
+}
+ul{
+  list-style: none;
+}
+select{
+  text-align: center;
+}
+.addscent{
+  font-size: 2px;
+}
+textarea{
+  background-color: bisque;
+}
+button{
+  display: block;
+  margin: 1em auto;
+  height: 2em;
+  background-color: bisque;
+  width: 200px;
 }
